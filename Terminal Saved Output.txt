@@ -1,0 +1,964 @@
+Last login: Wed May  1 13:57:59 on console
+COSML-1687580:~ rsudha941$ dotnet
+
+Usage: dotnet [options]
+Usage: dotnet [path-to-application]
+
+Options:
+  -h|--help         Display help.
+  --info            Display .NET Core information.
+  --list-sdks       Display the installed SDKs.
+  --list-runtimes   Display the installed runtimes.
+
+path-to-application:
+  The path to an application .dll file to execute.
+COSML-1687580:~ rsudha941$ dotnet new WebApp -o myWebApp --no-https
+
+Welcome to .NET Core!
+---------------------
+Learn more about .NET Core: https://aka.ms/dotnet-docs
+Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli-docs
+
+Telemetry
+---------
+The .NET Core tools collect usage data in order to help us improve your experience. The data is anonymous and doesn't include command-line arguments. The data is collected by Microsoft and shared with the community. You can opt-out of telemetry by setting the DOTNET_CLI_TELEMETRY_OPTOUT environment variable to '1' or 'true' using your favorite shell.
+
+Read more about .NET Core CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
+
+ASP.NET Core
+------------
+Successfully installed the ASP.NET Core HTTPS Development Certificate.
+To trust the certificate run 'dotnet dev-certs https --trust' (Windows and macOS only). For establishing trust on other platforms refer to the platform specific documentation.
+For more information on configuring HTTPS see https://go.microsoft.com/fwlink/?linkid=848054.
+Getting ready...
+The template "ASP.NET Core Web App" was created successfully.
+This template contains technologies from parties other than Microsoft, see https://aka.ms/aspnetcore-template-3pn-210 for details.
+
+Processing post-creation actions...
+Running 'dotnet restore' on myWebApp/myWebApp.csproj...
+  Restoring packages for /Users/rsudha941/myWebApp/myWebApp.csproj...
+  Generating MSBuild file /Users/rsudha941/myWebApp/obj/myWebApp.csproj.nuget.g.props.
+  Generating MSBuild file /Users/rsudha941/myWebApp/obj/myWebApp.csproj.nuget.g.targets.
+  Restore completed in 775 ms for /Users/rsudha941/myWebApp/myWebApp.csproj.
+
+Restore succeeded.
+
+COSML-1687580:~ rsudha941$ cd myWebApp
+COSML-1687580:myWebApp rsudha941$ dotnet run
+: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using '/Users/rsudha941/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[58]
+      Creating key {784568c6-3667-423d-9a97-135f7f24f902} with creation date 2019-05-02 16:35:30Z, activation date 2019-05-02 16:35:30Z, and expiration date 2019-07-31 16:35:30Z.
+warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
+      No XML encryptor configured. Key {784568c6-3667-423d-9a97-135f7f24f902} may be persisted to storage in unencrypted form.
+info: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[39]
+      Writing data to file '/Users/rsudha941/.aspnet/DataProtection-Keys/key-784568c6-3667-423d-9a97-135f7f24f902.xml'.
+Hosting environment: Development
+Content root path: /Users/rsudha941/myWebApp
+Now listening on: http://localhost:5000
+Application started. Press Ctrl+C to shut down.
+
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 205.1455ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 304.4687ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery/dist/jquery.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/js/bootstrap.bundle.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/site.css'. Physical path: '/Users/rsudha941/myWebApp/wwwroot/css/site.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/site.js'. Physical path: '/Users/rsudha941/myWebApp/wwwroot/js/site.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 10.4735ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 10.5011ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: '/Users/rsudha941/myWebApp/wwwroot/lib/bootstrap/dist/css/bootstrap.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: '/Users/rsudha941/myWebApp/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 15.7383ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 18.8764ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: '/Users/rsudha941/myWebApp/wwwroot/lib/jquery/dist/jquery.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 15.8446ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: '/Users/rsudha941/myWebApp/wwwroot/favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.2911ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 2.2546ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.6997ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: '/Users/rsudha941/myWebApp/wwwroot/lib/bootstrap/dist/css/bootstrap.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.5769ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery/dist/jquery.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/js/bootstrap.bundle.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/site.css'. Physical path: '/Users/rsudha941/myWebApp/wwwroot/css/site.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.2375ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/site.js'. Physical path: '/Users/rsudha941/myWebApp/wwwroot/js/site.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.2228ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: '/Users/rsudha941/myWebApp/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.6065ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: '/Users/rsudha941/myWebApp/wwwroot/lib/jquery/dist/jquery.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.6936ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/js/bootstrap.bundle.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/css/bootstrap.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /favicon.ico was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/site.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/site.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/js/bootstrap.bundle.js was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.6439ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.9521ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.6844ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.7306ms 304 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4.03ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery/dist/jquery.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/jquery/dist/jquery.js was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1778ms 304 application/javascript
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 3.3932ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1304.6943ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/js/bootstrap.bundle.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery/dist/jquery.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/site.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/site.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/js/bootstrap.bundle.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/css/bootstrap.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/jquery/dist/jquery.js was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1396ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1475ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1517ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1501ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.0737ms 304 application/javascript
+                    
+
+c^CApplication is shutting down...
+
+COSML-1687580:myWebApp rsudha941$ dotnet dev-certs https --trust
+Trusting the HTTPS development certificate was requested. If the certificate is not already trusted we will run the following command:
+'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'
+This command might prompt you for your password to install the certificate on the system keychain.
+Password:
+A valid HTTPS certificate is already present.
+COSML-1687580:myWebApp rsudha941$ dotnet run
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using '/Users/rsudha941/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+Hosting environment: Development
+Content root path: /Users/rsudha941/myWebApp
+Now listening on: http://localhost:5000
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/js/bootstrap.bundle.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /favicon.ico was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/site.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/site.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/css/bootstrap.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/js/bootstrap.bundle.js was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 22.8682ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 22.8645ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 22.8645ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 22.8548ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 22.8796ms 304 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery/dist/jquery.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/jquery/dist/jquery.js was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.2116ms 304 application/javascript
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 204.9191ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 296.0568ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 1.824ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.2329ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 0.5389ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.6862ms 200 text/html; charset=utf-8
+^CApplication is shutting down...
+^@
+COSML-1687580:myWebApp rsudha941$ dotnet add package Microsoft.EntityFrameworkCore.SQLite
+  Writing /var/folders/dg/sm863x6j541dbrh1mslgz5gh0000gp/T/tmpasGouT.tmp
+info : Adding PackageReference for package 'Microsoft.EntityFrameworkCore.SQLite' into project '/Users/rsudha941/myWebApp/myWebApp.csproj'.
+log  : Restoring packages for /Users/rsudha941/myWebApp/myWebApp.csproj...
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.sqlite/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.sqlite/index.json 215ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.sqlite/2.2.4/microsoft.entityframeworkcore.sqlite.2.2.4.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.sqlite/2.2.4/microsoft.entityframeworkcore.sqlite.2.2.4.nupkg 164ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.sqlite.core/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/sqlitepclraw.bundle_green/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.sqlite.core/index.json 143ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.sqlite.core/2.2.4/microsoft.entityframeworkcore.sqlite.core.2.2.4.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/sqlitepclraw.bundle_green/index.json 173ms
+info :   GET https://api.nuget.org/v3-flatcontainer/sqlitepclraw.bundle_green/1.1.12/sqlitepclraw.bundle_green.1.1.12.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/sqlitepclraw.bundle_green/1.1.12/sqlitepclraw.bundle_green.1.1.12.nupkg 9ms
+info :   GET https://api.nuget.org/v3-flatcontainer/sqlitepclraw.core/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/sqlitepclraw.provider.e_sqlite3.netstandard11/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/sqlitepclraw.lib.e_sqlite3.v110_xp/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/sqlitepclraw.lib.e_sqlite3.osx/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/sqlitepclraw.lib.e_sqlite3.linux/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.sqlite.core/2.2.4/microsoft.entityframeworkcore.sqlite.core.2.2.4.nupkg 142ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.relational/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.data.sqlite.core/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/sqlitepclraw.core/index.json 144ms
+info :   GET https://api.nuget.org/v3-flatcontainer/sqlitepclraw.core/1.1.12/sqlitepclraw.core.1.1.12.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/sqlitepclraw.core/1.1.12/sqlitepclraw.core.1.1.12.nupkg 13ms
+info :   OK https://api.nuget.org/v3-flatcontainer/sqlitepclraw.lib.e_sqlite3.v110_xp/index.json 184ms
+info :   OK https://api.nuget.org/v3-flatcontainer/sqlitepclraw.provider.e_sqlite3.netstandard11/index.json 186ms
+info :   OK https://api.nuget.org/v3-flatcontainer/sqlitepclraw.lib.e_sqlite3.linux/index.json 183ms
+info :   GET https://api.nuget.org/v3-flatcontainer/sqlitepclraw.lib.e_sqlite3.v110_xp/1.1.12/sqlitepclraw.lib.e_sqlite3.v110_xp.1.1.12.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/sqlitepclraw.provider.e_sqlite3.netstandard11/1.1.12/sqlitepclraw.provider.e_sqlite3.netstandard11.1.1.12.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/sqlitepclraw.lib.e_sqlite3.linux/1.1.12/sqlitepclraw.lib.e_sqlite3.linux.1.1.12.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/sqlitepclraw.lib.e_sqlite3.osx/index.json 189ms
+info :   GET https://api.nuget.org/v3-flatcontainer/sqlitepclraw.lib.e_sqlite3.osx/1.1.12/sqlitepclraw.lib.e_sqlite3.osx.1.1.12.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/sqlitepclraw.lib.e_sqlite3.v110_xp/1.1.12/sqlitepclraw.lib.e_sqlite3.v110_xp.1.1.12.nupkg 16ms
+info :   OK https://api.nuget.org/v3-flatcontainer/sqlitepclraw.provider.e_sqlite3.netstandard11/1.1.12/sqlitepclraw.provider.e_sqlite3.netstandard11.1.1.12.nupkg 15ms
+info :   OK https://api.nuget.org/v3-flatcontainer/sqlitepclraw.lib.e_sqlite3.linux/1.1.12/sqlitepclraw.lib.e_sqlite3.linux.1.1.12.nupkg 15ms
+info :   OK https://api.nuget.org/v3-flatcontainer/sqlitepclraw.lib.e_sqlite3.osx/1.1.12/sqlitepclraw.lib.e_sqlite3.osx.1.1.12.nupkg 13ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.relational/index.json 155ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.relational/2.2.4/microsoft.entityframeworkcore.relational.2.2.4.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.relational/2.2.4/microsoft.entityframeworkcore.relational.2.2.4.nupkg 44ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.data.sqlite.core/index.json 205ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.data.sqlite.core/2.2.4/microsoft.data.sqlite.core.2.2.4.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.data.sqlite.core/2.2.4/microsoft.data.sqlite.core.2.2.4.nupkg 166ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore/index.json 147ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore/2.2.4/microsoft.entityframeworkcore.2.2.4.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore/2.2.4/microsoft.entityframeworkcore.2.2.4.nupkg 11ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.abstractions/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.analyzers/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.analyzers/index.json 146ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.analyzers/2.2.4/microsoft.entityframeworkcore.analyzers.2.2.4.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.abstractions/index.json 155ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.abstractions/2.2.4/microsoft.entityframeworkcore.abstractions.2.2.4.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.analyzers/2.2.4/microsoft.entityframeworkcore.analyzers.2.2.4.nupkg 8ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.abstractions/2.2.4/microsoft.entityframeworkcore.abstractions.2.2.4.nupkg 10ms
+log  : Installing Microsoft.EntityFrameworkCore.Abstractions 2.2.4.
+log  : Installing Microsoft.EntityFrameworkCore.Analyzers 2.2.4.
+log  : Installing Microsoft.EntityFrameworkCore 2.2.4.
+log  : Installing Microsoft.EntityFrameworkCore.Relational 2.2.4.
+log  : Installing Microsoft.Data.Sqlite.Core 2.2.4.
+log  : Installing SQLitePCLRaw.lib.e_sqlite3.linux 1.1.12.
+log  : Installing SQLitePCLRaw.lib.e_sqlite3.osx 1.1.12.
+log  : Installing SQLitePCLRaw.lib.e_sqlite3.v110_xp 1.1.12.
+log  : Installing SQLitePCLRaw.core 1.1.12.
+log  : Installing SQLitePCLRaw.provider.e_sqlite3.netstandard11 1.1.12.
+log  : Installing Microsoft.EntityFrameworkCore.Sqlite.Core 2.2.4.
+log  : Installing SQLitePCLRaw.bundle_green 1.1.12.
+log  : Installing Microsoft.EntityFrameworkCore.Sqlite 2.2.4.
+info : Package 'Microsoft.EntityFrameworkCore.SQLite' is compatible with all the specified frameworks in project '/Users/rsudha941/myWebApp/myWebApp.csproj'.
+info : PackageReference for package 'Microsoft.EntityFrameworkCore.SQLite' version '2.2.4' added to file '/Users/rsudha941/myWebApp/myWebApp.csproj'.
+info : Committing restore...
+info : Writing lock file to disk. Path: /Users/rsudha941/myWebApp/obj/project.assets.json
+log  : Restore completed in 2.82 sec for /Users/rsudha941/myWebApp/myWebApp.csproj.
+COSML-1687580:myWebApp rsudha941$ dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+  Writing /var/folders/dg/sm863x6j541dbrh1mslgz5gh0000gp/T/tmpXD31ZE.tmp
+info : Adding PackageReference for package 'Microsoft.VisualStudio.Web.CodeGeneration.Design' into project '/Users/rsudha941/myWebApp/myWebApp.csproj'.
+log  : Restoring packages for /Users/rsudha941/myWebApp/myWebApp.csproj...
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.design/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.design/index.json 328ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.design/2.2.3/microsoft.visualstudio.web.codegeneration.design.2.2.3.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.design/2.2.3/microsoft.visualstudio.web.codegeneration.design.2.2.3.nupkg 11ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegenerators.mvc/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegenerators.mvc/index.json 146ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegenerators.mvc/2.2.3/microsoft.visualstudio.web.codegenerators.mvc.2.2.3.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegenerators.mvc/2.2.3/microsoft.visualstudio.web.codegenerators.mvc.2.2.3.nupkg 11ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration/index.json 141ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration/2.2.3/microsoft.visualstudio.web.codegeneration.2.2.3.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration/2.2.3/microsoft.visualstudio.web.codegeneration.2.2.3.nupkg 11ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.entityframeworkcore/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.entityframeworkcore/index.json 143ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.entityframeworkcore/2.2.3/microsoft.visualstudio.web.codegeneration.entityframeworkcore.2.2.3.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.entityframeworkcore/2.2.3/microsoft.visualstudio.web.codegeneration.entityframeworkcore.2.2.3.nupkg 10ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.core/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.core/index.json 141ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.core/2.2.3/microsoft.visualstudio.web.codegeneration.core.2.2.3.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.core/2.2.3/microsoft.visualstudio.web.codegeneration.core.2.2.3.nupkg 10ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.templating/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.templating/index.json 141ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.templating/2.2.3/microsoft.visualstudio.web.codegeneration.templating.2.2.3.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.templating/2.2.3/microsoft.visualstudio.web.codegeneration.templating.2.2.3.nupkg 9ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.utils/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.utils/index.json 145ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.utils/2.2.3/microsoft.visualstudio.web.codegeneration.utils.2.2.3.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.utils/2.2.3/microsoft.visualstudio.web.codegeneration.utils.2.2.3.nupkg 10ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.contracts/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.contracts/index.json 157ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.contracts/2.2.3/microsoft.visualstudio.web.codegeneration.contracts.2.2.3.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.visualstudio.web.codegeneration.contracts/2.2.3/microsoft.visualstudio.web.codegeneration.contracts.2.2.3.nupkg 9ms
+log  : Installing Microsoft.VisualStudio.Web.CodeGeneration.Contracts 2.2.3.
+log  : Installing Microsoft.VisualStudio.Web.CodeGeneration.Utils 2.2.3.
+log  : Installing Microsoft.VisualStudio.Web.CodeGeneration.Templating 2.2.3.
+log  : Installing Microsoft.VisualStudio.Web.CodeGeneration.Core 2.2.3.
+log  : Installing Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore 2.2.3.
+log  : Installing Microsoft.VisualStudio.Web.CodeGeneration 2.2.3.
+log  : Installing Microsoft.VisualStudio.Web.CodeGenerators.Mvc 2.2.3.
+log  : Installing Microsoft.VisualStudio.Web.CodeGeneration.Design 2.2.3.
+info : Package 'Microsoft.VisualStudio.Web.CodeGeneration.Design' is compatible with all the specified frameworks in project '/Users/rsudha941/myWebApp/myWebApp.csproj'.
+info : PackageReference for package 'Microsoft.VisualStudio.Web.CodeGeneration.Design' version '2.2.3' added to file '/Users/rsudha941/myWebApp/myWebApp.csproj'.
+info : Committing restore...
+log  : Generating MSBuild file /Users/rsudha941/myWebApp/obj/myWebApp.csproj.nuget.g.props.
+info : Writing lock file to disk. Path: /Users/rsudha941/myWebApp/obj/project.assets.json
+log  : Restore completed in 2.7 sec for /Users/rsudha941/myWebApp/myWebApp.csproj.
+COSML-1687580:myWebApp rsudha941$ dotnet add package Microsoft.EntityFrameworkCore.Design
+  Writing /var/folders/dg/sm863x6j541dbrh1mslgz5gh0000gp/T/tmpCzPHuO.tmp
+info : Adding PackageReference for package 'Microsoft.EntityFrameworkCore.Design' into project '/Users/rsudha941/myWebApp/myWebApp.csproj'.
+log  : Restoring packages for /Users/rsudha941/myWebApp/myWebApp.csproj...
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/index.json 278ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/2.2.4/microsoft.entityframeworkcore.design.2.2.4.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/2.2.4/microsoft.entityframeworkcore.design.2.2.4.nupkg 19ms
+log  : Installing Microsoft.EntityFrameworkCore.Design 2.2.4.
+info : Package 'Microsoft.EntityFrameworkCore.Design' is compatible with all the specified frameworks in project '/Users/rsudha941/myWebApp/myWebApp.csproj'.
+info : PackageReference for package 'Microsoft.EntityFrameworkCore.Design' version '2.2.4' added to file '/Users/rsudha941/myWebApp/myWebApp.csproj'.
+info : Committing restore...
+log  : Generating MSBuild file /Users/rsudha941/myWebApp/obj/myWebApp.csproj.nuget.g.props.
+info : Writing lock file to disk. Path: /Users/rsudha941/myWebApp/obj/project.assets.json
+log  : Restore completed in 1.08 sec for /Users/rsudha941/myWebApp/myWebApp.csproj.
+COSML-1687580:myWebApp rsudha941$ dotnet tool install --global dotnet-aspnet-codegenerator
+You can invoke the tool using the following command: dotnet-aspnet-codegenerator
+Tool 'dotnet-aspnet-codegenerator' (version '2.2.3') was successfully installed.
+COSML-1687580:myWebApp rsudha941$ dotnet aspnet-codegenerator myWebApp -m Movie -dc MovieContext -udl -outDir Pages/Movies --referenceScriptLibraries
+Building project ...
+Finding the generator 'myWebApp'...
+No code generators found with the name 'myWebApp'
+   at Microsoft.VisualStudio.Web.CodeGeneration.CodeGeneratorsLocator.GetCodeGenerator(String codeGeneratorName)
+   at Microsoft.VisualStudio.Web.CodeGeneration.CodeGenCommand.Execute(String[] args)
+RunTime 00:00:09.98
+COSML-1687580:myWebApp rsudha941$ dotnet aspnet-codegenerator myWebApp -h
+
+
+Usage: aspnet-codegenerator [arguments] [options]
+
+Arguments:
+  generator  Name of the generator. Check available generators below.
+
+Options:
+  -p|--project             Path to .csproj file in the project.
+  -n|--nuget-package-dir   
+  -c|--configuration       Configuration for the project (Possible values: Debug/ Release)
+  -tfm|--target-framework  Target Framework to use. (Short folder name of the tfm. eg. net46)
+  -b|--build-base-path     
+  --no-build               
+
+Selected Code Generator: myWebApp
+No code generator found with the name 'myWebApp'.
+
+Available generators:
+  view      : Generates a view.
+  area      : Generates an MVC Area.
+  controller: Generates a controller.
+  identity  : Generates an MVC Area with controllers and 
+  razorpage : Generates RazorPage(s).
+
+
+RunTime 00:00:01.52
+COSML-1687580:myWebApp rsudha941$ dotnet ef migrations add InitialCreate
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.4-servicing-10062 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+Done. To undo this action, use 'ef migrations remove'
+COSML-1687580:myWebApp rsudha941$ dotnet ef database update
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.4-servicing-10062 initialized 'MovieContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA foreign_keys=ON;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA foreign_keys=ON;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "__EFMigrationsHistory" (
+          "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+          "ProductVersion" TEXT NOT NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA foreign_keys=ON;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA foreign_keys=ON;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA foreign_keys=ON;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+info: Microsoft.EntityFrameworkCore.Migrations[20402]
+      Applying migration '20190502212520_InitialCreate'.
+Applying migration '20190502212520_InitialCreate'.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA foreign_keys=ON;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Movie" (
+          "ID" INTEGER NOT NULL CONSTRAINT "PK_Movie" PRIMARY KEY AUTOINCREMENT,
+          "Title" TEXT NULL,
+          "ReleaseDate" TEXT NOT NULL,
+          "Genre" TEXT NULL,
+          "Price" TEXT NOT NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+      VALUES ('20190502212520_InitialCreate', '2.2.4-servicing-10062');
+Done.
+COSML-1687580:myWebApp rsudha941$ dotnet run
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using '/Users/rsudha941/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+Hosting environment: Development
+Content root path: /Users/rsudha941/myWebApp
+Now listening on: http://localhost:5000
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery/dist/jquery.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/js/bootstrap.bundle.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/css/site.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/jquery/dist/jquery.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/site.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/js/bootstrap.bundle.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/site.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/css/bootstrap.css was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 24.8263ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 24.8289ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 24.8363ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 24.8271ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 24.8137ms 304 application/javascript
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 222.6878ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 326.7844ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/js/bootstrap.bundle.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery/dist/jquery.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/site.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/jquery/dist/jquery.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/js/bootstrap.bundle.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/site.js was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/css/bootstrap.css was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1789ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1795ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.2525ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.137ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.2651ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 2.1559ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.6623ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 0.6697ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.8178ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/movies  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.643ms 404 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/movies  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.9428ms 404 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/movie  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.0689ms 404 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/movies  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1022ms 404 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/movies  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.0698ms 404 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/movie  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.0773ms 404 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 0.6376ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7947ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 0.5571ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7072ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 0.6771ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.8298ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 0.5231ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.6533ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 0.623ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.8104ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 2.3863ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.6156ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/css/site.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/site.css was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.2284ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/js/bootstrap.bundle.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/js/bootstrap.bundle.js was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1919ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/site.js was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery/dist/jquery.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1421ms 304 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/css/bootstrap.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/jquery/dist/jquery.js was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1069ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1071ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/css/bootstrap.css was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.2642ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/site.css was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery/dist/jquery.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /js/site.js was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1361ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.2113ms 304 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/jquery/dist/jquery.js was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.0852ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/js/bootstrap.bundle.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /lib/bootstrap/dist/js/bootstrap.bundle.js was not modified
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.1603ms 304 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[3]
+      Route matched with {page = "/Index"}. Executing page /Index
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[101]
+      Executing handler method myWebApp.Pages.IndexModel.OnGet with arguments ((null)) - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[102]
+      Executed handler method OnGet, returned result .
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker[4]
+      Executed page /Index in 0.7049ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Page: /Index'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.8297ms 200 text/html; charset=utf-8
+warn: Microsoft.AspNetCore.Server.Kestrel[22]
+      Heartbeat took longer than "00:00:01" at "05/08/2019 13:30:02 +00:00".
+warn: Microsoft.AspNetCore.Server.Kestrel[22]
+      Heartbeat took longer than "00:00:01" at "05/11/2019 08:00:19 +00:00".
+warn: Microsoft.AspNetCore.Server.Kestrel[22]
+      Heartbeat took longer than "00:00:01" at "05/14/2019 08:00:19 +00:00".
+-Add a comments field for capturing the SLA slippage team responsible--Add a comments field for capturing the SLA slippage team responsible-^[
+
+
+
+
+
+
